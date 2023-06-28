@@ -1,13 +1,24 @@
 import Todos from './components/Todos';
 import Todo from './models/todo';
+import AddTodo from './components/AddTodo';
+import { useState } from 'react';
 
 const App = () => {
-  const todos = [
-    new Todo('111'),
-    new Todo('222')
-  ]
+  const [todos, setTodos] = useState<Todo[]>([]);
+
+  const addTodoHandler = (todoText: string) => {
+    const addTodo = new Todo(todoText);
+
+    setTodos((preTodos)=>{
+      return preTodos.concat(addTodo);
+    });
+  }
+
   return (
-    <Todos items={todos} />
+    <div>
+      <AddTodo onAddTodo={addTodoHandler} />
+      <Todos items={todos} />
+    </div>
   );
 }
 
