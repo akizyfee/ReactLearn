@@ -1,6 +1,6 @@
-import Todos from './components/Todos';
+import Todos from './components/Todos/Todos';
 import Todo from './models/todo';
-import AddTodo from './components/AddTodo';
+import AddTodo from './components/AddTodo/AddTodo';
 import { useState } from 'react';
 
 const App = () => {
