@@ -1,8 +1,13 @@
-import './App.css';
+import Todos from './components/Todos';
+import Todo from './models/todo';
 
-function App() {
+const App = () => {
+  const todos = [
+    new Todo('111'),
+    new Todo('222')
+  ]
   return (
-    <div></div>
+    <Todos items={todos} />
   );
 }
 
